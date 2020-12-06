@@ -1,0 +1,6 @@
+*.bak
+*.rpt
+*db*/
+output*/
+modelsim*/
+timing*/
