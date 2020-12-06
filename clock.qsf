@@ -250,10 +250,8 @@ set_global_assignment -name VHDL_FILE divisor.vhd
 set_global_assignment -name VHDL_FILE clock_digits.vhd
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name ENABLE_LOGIC_ANALYZER_INTERFACE OFF
 set_global_assignment -name USE_LOGIC_ANALYZER_INTERFACE_FILE /mnt/work/project_fpga/clock/lai1.lai
-set_global_assignment -name LOGIC_ANALYZER_INTERFACE_FILE lai1.lai
 set_location_assignment PIN_H2 -to altera_reserved_tms
 set_location_assignment PIN_G2 -to altera_reserved_tck
 set_location_assignment PIN_L4 -to altera_reserved_tdi
