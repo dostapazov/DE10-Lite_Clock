@@ -7,9 +7,9 @@ entity clock_digits is
 generic (limit : integer := 60);
 port
 (
-  clk			: in	std_logic;  
+  clk		: in	std_logic;  
   reset		: in	std_logic;
-  dir			: in	std_logic;
+  dir		: in	std_logic;
   clk_out   : out std_logic;
   digit_hi	: out std_logic_vector(3 downto 0);
   digit_lo	: out std_logic_vector(3 downto 0)
