@@ -8,33 +8,33 @@ entity clock_ctrl_panel is
 generic (input_clock : integer  );
 port
 (
-	clk		: in	std_logic;
+	clk			: in	std_logic;
 	reset		: in	std_logic;
-	start 	: in	std_logic;
+	start 		: in	std_logic;
 	up			: in	std_logic;
 	dn			: in	std_logic;
 	ed_hours	: in	std_logic; 
-	ed_mins	: in	std_logic;
-	sec_clk_out		: out std_logic := '0';	
+	ed_mins		: in	std_logic;
+	sec_clk_out	: out	std_logic := '0';	
 	
 	minuts_clk_in	: in	std_logic := '0';
 	minuts_clk_out	: out	std_logic := '0';
 	hours_clk_in	: in	std_logic := '0';
 	hours_clk_out	: out	std_logic := '0';
-	dir		: out std_logic := '0'
+	dir				: out	std_logic := '0'
 );
 end clock_ctrl_panel;
 
 
 architecture clock_ctrl_panel_arch of clock_ctrl_panel is
-signal sig_sec_clk_out	 : std_logic;
+signal sig_sec_clk_out	: std_logic;
 signal sig_key_dn	 	: std_logic := '0';
 signal sig_key_up	 	: std_logic := '0';
-signal sig_minuts_dir: std_logic := '0';
-signal sig_minuts_clk: std_logic := '0';
+signal sig_minuts_dir	: std_logic := '0';
+signal sig_minuts_clk	: std_logic := '0';
 begin
 
-  deb_key_up : work.debounced_key
+  deb_key_up : entity work.debounced_key
   generic map(input_clock/100000)
   port map
   (
@@ -44,7 +44,7 @@ begin
 	key_out =>sig_key_up
   );
   
-  deb_key_dn : work.debounced_key
+  deb_key_dn : entity work.debounced_key
   generic map(input_clock/10000)
   port map
   (
@@ -55,7 +55,7 @@ begin
   );
   
   
-  clock_divider1 : work.divisor
+  clock_divider1 : entity work.divisor
   generic map (input_clock)
   port map
   (

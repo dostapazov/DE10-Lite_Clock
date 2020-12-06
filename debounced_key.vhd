@@ -14,7 +14,7 @@ end debounced_key;
 
 architecture debounced_key_arch of debounced_key is
  signal sig_key_state : std_logic;
- signal sig_counter	 : integer;
+ signal sig_counter	 : natural range 0 to debounce_filter;
  
 begin
 	key_out <= sig_key_state;

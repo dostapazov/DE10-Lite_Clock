@@ -13,7 +13,7 @@ CLK_OUT : out 	std_logic
 end divisor;
 
 architecture divisor_arch of divisor is
-signal counter: integer :=0;
+signal counter: natural  range 0 to DIVIDER :=0;
 signal result : std_logic := '0';
 begin
 CLK_OUT <= result;

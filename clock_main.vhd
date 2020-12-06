@@ -30,7 +30,7 @@ begin
  HEX4(7)	<='0';
  HEX5(7)	<='1';
 
-  clock_instance : work.clock
+  clock_instance : entity work.clock
   generic map (FREQ_10_MHZ)
   port map
   (

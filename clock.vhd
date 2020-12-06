@@ -53,7 +53,7 @@ begin
  
  SECUND_FLASH  <= tmp_clk;
  
- ctrl_panel : work.clock_ctrl_panel
+ ctrl_panel : entity work.clock_ctrl_panel
  generic map(CLK_FREQ)
  port map
  (
@@ -73,11 +73,9 @@ begin
 	hours_clk_out	=> hours_clk_out
 
  );
-
  
  
- 
- secunds : work.clock_digits
+ secunds : entity work.clock_digits
  generic map (SECUNDS_COUNT)
  port map
  (
@@ -90,7 +88,7 @@ begin
 	
  );
  
- minutes : work.clock_digits
+ minutes : entity work.clock_digits
  generic map (MINUTES_COUNT)
  port map
  (
@@ -103,7 +101,7 @@ begin
 	
  );
  
- hours : work.clock_digits
+ hours : entity work.clock_digits
  generic map (HOURS_COUNT)
  port map
  (
@@ -115,42 +113,42 @@ begin
  );
 
  
- sdigit_lo : work.hex_to_7seg
+ ind_sec_lo : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_secunds_lo,
   SEG_O		=> SECUNDS_LO
  );
  
- sdigit_hi : work.hex_to_7seg
+ ind_sec_hi : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_secunds_hi,
   SEG_O		=> SECUNDS_HI
  );
  
- mdigit_lo : work.hex_to_7seg
+ ind_minutes_lo : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_minutes_lo,
   SEG_O		=> MINUTES_LO
  );
 
- mdigit_hi : work.hex_to_7seg
+ ind_minutes_hi : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_minutes_hi,
   SEG_O		=> MINUTES_HI
  );
  
- hdigit_lo : work.hex_to_7seg
+ ind_hours_lo : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_hours_lo,
   SEG_O		=> HOURS_LO
  );
 
- hdigit_hi : work.hex_to_7seg
+ ind_hours_hi : entity work.hex_to_7seg
  port map
  (
   NUMBER_I	=> sig_hours_hi,
