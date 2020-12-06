@@ -244,10 +244,6 @@ set_location_assignment PIN_AB2 -to GPIO[34]
 set_location_assignment PIN_AA2 -to GPIO[35]
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH clock_main_vhd_tst -section_id eda_simulation
-set_global_assignment -name VHDL_FILE hex_to_7seg.vhd
-set_global_assignment -name VHDL_FILE clock.vhd
-set_global_assignment -name VHDL_FILE divisor.vhd
-set_global_assignment -name VHDL_FILE clock_digits.vhd
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_global_assignment -name ENABLE_LOGIC_ANALYZER_INTERFACE OFF
@@ -268,12 +264,9 @@ set_location_assignment PIN_H10 -to ~ALTERA_CONFIG_SEL~
 set_location_assignment PIN_H9 -to ~ALTERA_nCONFIG~
 set_location_assignment PIN_G9 -to ~ALTERA_nSTATUS~
 set_location_assignment PIN_F8 -to ~ALTERA_CONF_DONE~
-set_global_assignment -name VHDL_FILE clock_ctrl_panel.vhd
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name VHDL_FILE debounced_key.vhd
 set_global_assignment -name OPTIMIZATION_MODE "HIGH POWER EFFORT"
-set_global_assignment -name VHDL_FILE clock_main.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -282,5 +275,12 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT STAMP -section_id eda_board_d
 set_global_assignment -name EDA_TEST_BENCH_NAME clock_main_vhd_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id clock_main_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME clock_main_vhd_tst -section_id clock_main_vhd_tst
-set_global_assignment -name EDA_TEST_BENCH_FILE clock_main_vhd_tst.vhd -section_id clock_main_vhd_tst -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE src/hex_to_7seg.vhd
+set_global_assignment -name VHDL_FILE src/divisor.vhd
+set_global_assignment -name VHDL_FILE src/debounced_key.vhd
+set_global_assignment -name VHDL_FILE src/clock_main.vhd
+set_global_assignment -name VHDL_FILE src/clock_digits.vhd
+set_global_assignment -name VHDL_FILE src/clock_ctrl_panel.vhd
+set_global_assignment -name VHDL_FILE src/clock.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE src/testbench/clock_main_vhd_tst.vhd -section_id clock_main_vhd_tst
