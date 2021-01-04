@@ -85,9 +85,9 @@ always : PROCESS
 BEGIN                                                         
         -- code executes for every event on sensitivity list  
 		 SW(9) <= '1';
-		 wait for 10ns;
+		 wait for 10 ns;
 		 SW(9) <= '0';
-		 wait for 1ns;
+		 wait for 1 ns;
 		 
 		  ADC_CLK_10 <= '0';
 		  for clk in 0 to 1_000_000_000 loop
